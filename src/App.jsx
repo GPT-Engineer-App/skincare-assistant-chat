@@ -5,6 +5,9 @@ import { Home } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/default"; // available: default, navbar, sidebar
 import Index from "./pages/Index.jsx";
+import Login from "./pages/Login.jsx";
+import Chat from "./pages/Chat.jsx";
+
 const queryClient = new QueryClient();
 
 export const navItems = [
@@ -24,7 +27,8 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
-              {/* Add more routes here as needed */}
+              <Route path="login" element={<Login />} />
+              <Route path="chat" element={<Chat />} />
             </Route>
           </Routes>
         </Router>
